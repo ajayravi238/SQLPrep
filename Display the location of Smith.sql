@@ -1,0 +1,7 @@
+-- Display the location of Smith.
+
+SELECT LOC
+FROM DEPT
+WHERE DEPTNO = (SELECT DEPTNO
+FROM EMP
+WHERE ENAME = 'SMITH');
