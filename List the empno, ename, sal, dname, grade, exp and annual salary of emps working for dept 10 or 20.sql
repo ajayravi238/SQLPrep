@@ -1,0 +1,5 @@
+-- List the empno, ename, sal, dname, grade, exp and annual salary of emps working for dept 10 or 20.
+
+SELECT E.EMPNO, E.ENAME, E.SAL, D.DNAME, S.GRADE, 12*E.SAL AS "ANNUAL SAL",  (MONTHS_BETWEEN(SYSDATE, E.HIREDATE)/12) AS "EXP"
+FROM EMP E, DEPT D, SALGRADE S
+WHERE E.DEPTNO IN (10, 20) AND E.DEPTNO = D.DEPTNO AND E.SAL BETWEEN S.LOSAL AND S.HISAL;
