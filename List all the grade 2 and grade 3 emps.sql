@@ -1,0 +1,6 @@
+-- List all the grade 2 and grade 3 emps.
+
+SELECT *
+FROM EMP E, SALGRADE S
+WHERE E.SAL BETWEEN LOSAL AND HISAL AND
+S.GRADE IN (2, 3);
