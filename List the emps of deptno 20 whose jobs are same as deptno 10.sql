@@ -1,0 +1,8 @@
+-- List the emps of deptno 20 whose jobs are same as deptno 10.
+
+SELECT *
+FROM EMP E, DEPT D
+WHERE D.DEPTNO = 20 AND E.DEPTNO = D.DEPTNO AND E.JOB IN (
+SELECT E.JOB
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO AND D.DEPTNO = 10);
