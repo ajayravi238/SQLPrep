@@ -1,0 +1,8 @@
+-- List the most recently hired emp of grade 3 belongs to location Chicago.
+
+SELECT *
+FROM EMP E, DEPT D
+WHERE D.LOC = 'CHICAGO'
+AND HIREDATE IN (SELECT MAX(HIREDATE)
+FROM EMP E, SALGRADE S
+WHERE SAL BETWEEN LOSAL AND HISAL AND GRADE = 3);
