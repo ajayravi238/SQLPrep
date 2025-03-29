@@ -1,0 +1,9 @@
+-- Find the highest paid employee of sales department.
+
+SELECT *
+FROM EMP
+WHERE SAL IN (SELECT MAX(SAL)
+FROM EMP
+WHERE DEPTNO IN (SELECT DEPTNO
+FROM DEPT
+WHERE DNAME = 'SALES'));
