@@ -1,0 +1,7 @@
+-- Display total salary employee belonging to grade 3.
+
+SELECT SUM(SAL)
+FROM EMP
+WHERE EMPNO IN (SELECT EMPNO
+FROM EMP E, SALGRADE S
+WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL AND S.GRADE = 3);
